@@ -134,14 +134,13 @@ std::string Http::createResponseHeader(size_t filelen, int status_code) {
     std::string content_length   = filesize;
 	std::string content_range = "";
     std::string custom_data = "";
-	std::string accepted_ranges = "";
-	std::string cache_control = "";
 	std::string http_version = "HTTP/1.0";
 	std::string EOL = "\r\n";
 	std::string options = "";
 	
     options += "Access-Control-Allow-Origin: *" + EOL;
 	options	+= "Access-Control-Allow-Headers: X-Requested-With, Content-Type, X-Codingpedia, X-HTTP-Method-Override" + EOL;
+	options += "x-content-type-options: nosniff" + EOL;
 
 	// Status code = 206
 	if (status_code == Http::Status::OK && this->begin_range >= 0) {
@@ -164,7 +163,6 @@ std::string Http::createResponseHeader(size_t filelen, int status_code) {
 	// Status code = 404
 	else if(status_code == Http::Status::NOT_FOUND) {
 		status 				 = "404 Not Found";
-		options    			+= "x-content-type-options: nosniff" + EOL;
 		connection 			 = "close";
 		this->reqst_filetype = "text/html; charset=UTF-8";
 		
@@ -183,10 +181,10 @@ std::string Http::createResponseHeader(size_t filelen, int status_code) {
 			</html>																						\
 		";
 		
-		content_length 		 = custom_data.length();
+		content_length 		 = std::to_string(custom_data.length());
 	}
 	
-	
+	// Construct the header
 	this->header += http_version + " " + status + EOL;
 	
 	if(status_code != Http::Status::NOT_FOUND)
@@ -205,51 +203,6 @@ std::string Http::createResponseHeader(size_t filelen, int status_code) {
 	this->header += EOL;
 	this->header += custom_data;
 	
-	/*
-	// Status NOT MODIFIED
-    if(status_code == Http::Status::NOT_MODIFIED) {
-        status = "304 Not Modified";
-        connection = "keep-alive";
-        // implement time check
-    } else {
-        if(status_code >= 200 && status_code < 300) {
-			// Status OK
-            if(status_code == Http::Status::OK) {
-                status = "200 OK";
-			// Status PARTIAL CONTENT
-            } else if(status_code == Http::Status::PARTIAL_CONTENT) {
-                status = "206 Partial Content";
-            }
-            
-            if(this->begin_range >= 0) {
-                status = "206 Partial Content";
-                length = std::to_string(filelen - this->begin_range);
-            } else this->begin_range = 0;
-
-            connection = "keep-alive";
-
-            this->header = "Content-Range: bytes " + std::to_string(this->begin_range) + "-" + std::to_string(filelen - 1) + "/" + filesize + "\r\nAccept-Ranges: bytes\r\nCache-Control: public, max-age=0\r\n";
-        }
-		// Status NOT FOUND
-		else if(status_code == Http::Status::NOT_FOUND) {
-            status = "404 Not Found";
-            this->header = "x-content-type-options: nosniff\r\n";
-            connection = "close";
-			
-			// Custom not found page.
-            custom_data = "<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL " + this->reqst_file + " was not found on this server.</p><hr><address>Projeto/Redes Webserver</address></body></html>";
-            length = custom_data.length();
-        }
-        
-        this->header += "Content-Type: " + reqst_filetype + "\r\nContent-Length: " + length + "\r\n";
-    }
-
-    this->header += "Connection: " + connection + "\r\n";
-    
-    this->header += "Access-Control-Allow-Origin: *\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, X-Codingpedia, X-HTTP-Method-Override\r\nDate: " + getDate("%a, %d %b %Y %T %Z") + "\r\nX-Powered-By: " + this->server_name + "\r\n";
-    
-    this->header = "HTTP/1.0 " + status + "\r\n" + this->header + "\r\n" + custom_data;
-    */
     return this->header;
 }
 
@@ -260,12 +213,11 @@ t_byte * Http::createBinaryPacket(t_byte * file_bin, size_t file_size) {
 	if(this->header.length() < 1)
         return NULL;
     
-    size_t data_size;
+    size_t data_size = 0;
     
 	// Check if have data
     if(file_bin == NULL) {
         file_size = 0;
-        data_size = 0;
     } else data_size = file_size - this->begin_range;
     
 	// Sets the buffer size
@@ -278,8 +230,8 @@ t_byte * Http::createBinaryPacket(t_byte * file_bin, size_t file_size) {
     memcpy(this->buffer, this->header.c_str(), this->header.length());
     
     // Copy the file bytes to buffer
-    if(file_size > 0)
-        memcpy(this->buffer + this->header.length(), file_bin + this->begin_range, file_size - this->begin_range);
+    if(data_size > 0)
+        memcpy(this->buffer + this->header.length(), file_bin + this->begin_range, data_size);
         
     return this->buffer;
 }
