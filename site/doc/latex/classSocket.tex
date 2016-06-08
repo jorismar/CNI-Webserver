@@ -1,0 +1,554 @@
+\hypertarget{classSocket}{\section{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+}
+
+
+This class implements the T\+C\+P sockets.  
+
+
+
+
+{\ttfamily \#include $<$socket.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSocket_a7c3256c4fc6e2c603df73201049fae5a}{\hyperlink{classSocket_a7c3256c4fc6e2c603df73201049fae5a}{Socket} ()}\label{classSocket_a7c3256c4fc6e2c603df73201049fae5a}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSocket_a1c4718d5b4b33f92559ba413ad119c03}{Socket} (int port)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classSocket_a594ef9479fc328ef703294d5c98fd024}{virtual \hyperlink{classSocket_a594ef9479fc328ef703294d5c98fd024}{$\sim$\+Socket} ()}\label{classSocket_a594ef9479fc328ef703294d5c98fd024}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a4fcdcae06c85a6a4be83cee0f9c34735}{Bind} ()
+\begin{DoxyCompactList}\small\item\em Associate a socket with Local I\+P address and a defined port number. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a9a9ba7cf3d9efe0a8c502d8d589d7f48}{Bind} (int port)
+\begin{DoxyCompactList}\small\item\em Associate a socket with Local I\+P address and a port number. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a43c2f57797c9e37de056f8e0dab2c1f1}{Bind} (std\+::string ip, int port)
+\begin{DoxyCompactList}\small\item\em Associate a socket with an I\+P address and a port number (N\+O\+T I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D Y\+E\+T). \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a41051323db81b63a66ac66321962edca}{Listen} (int backlog)
+\begin{DoxyCompactList}\small\item\em Tell a socket to listen for incoming connections. \end{DoxyCompactList}\item 
+\hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket} \hyperlink{classSocket_a1a8d2862dd66d6345e72705d30f36406}{Accept} ()
+\begin{DoxyCompactList}\small\item\em Accept an incoming connection on a listening socket. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_af29e2918a65dc095a4d29f3f737d1c65}{Connect} (std\+::string ip, int port)
+\begin{DoxyCompactList}\small\item\em Connect a socket to a server. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_ac2c3da9186d42f261286e75161a7a3e9}{Read} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Read data on a socket. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a96ca161ecfaa38d2384141f131a0e41a}{Receive} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Receive data on a socket (Timeout is supported). \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a9fbcd665edfd9cdaae25aeb6fcb5a2eb}{Send} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send data out over a socket. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_ad9e6717ab6d79f3805d05f839ee4b902}{Reply} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send data out over a remote connected socket. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_af54cb0772fa8cbce304c26cab4a63ad7}{Close} ()
+\begin{DoxyCompactList}\small\item\em Close the main and remote socket descriptor. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_af6d09bbd69b9978f90c2d21be7c04820}{Close\+Server} ()
+\begin{DoxyCompactList}\small\item\em Close the main socket descriptor. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a97248bd978b2212d0a78577d1b264cd3}{Close\+Client} ()
+\begin{DoxyCompactList}\small\item\em Close the remote socket descriptor. \end{DoxyCompactList}\item 
+void \hyperlink{classSocket_a3d4c5d2c8722949bbd72a9d453edc94f}{set\+Port} (int port)
+\begin{DoxyCompactList}\small\item\em Set main socket port. \end{DoxyCompactList}\item 
+void \hyperlink{classSocket_af77803439a08c530d56c6e47392db835}{set\+Timeout} (int sec)
+\begin{DoxyCompactList}\small\item\em Set timeout. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_ab1b21cc98297c4b22638131805559185}{get\+Port} ()
+\begin{DoxyCompactList}\small\item\em Get main socket port. \end{DoxyCompactList}\item 
+int \hyperlink{classSocket_a46dab09a0a8bc833b335b4ffbe251532}{get\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Get timeout value. \end{DoxyCompactList}\item 
+bool \hyperlink{classSocket_a60c76a4c1e26192218d598b63cbb97b9}{is\+Connected} ()
+\begin{DoxyCompactList}\small\item\em Check if socket is connected. \end{DoxyCompactList}\item 
+bool \hyperlink{classSocket_af4463bb00360df09c545e45f38f555be}{is\+Bound} ()
+\begin{DoxyCompactList}\small\item\em Check if socket is bound. \end{DoxyCompactList}\item 
+bool \hyperlink{classSocket_a43012c8a63f3dce04b3e8620e9057a0b}{is\+Listening} ()
+\begin{DoxyCompactList}\small\item\em Check if socket is listening. \end{DoxyCompactList}\item 
+bool \hyperlink{classSocket_a7e54aa5a8807a44096258b41fd27ecf3}{is\+Closed} ()
+\begin{DoxyCompactList}\small\item\em Check if socket is closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classSocket_a880473a820b824bae9cf1f718a2e0ba3}{read\+From} (\hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket} socket, \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size, int timeout)
+\begin{DoxyCompactList}\small\item\em Receive data on a socket (Timeout is supported). \end{DoxyCompactList}\item 
+static int \hyperlink{classSocket_a63d6fc0dbd69e0752fd4c484028c64da}{read\+From} (\hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket} socket, \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Read data on a socket. \end{DoxyCompactList}\item 
+static int \hyperlink{classSocket_ab569a0288b1e56f962b1b9ea1cde89eb}{send\+To} (\hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket} socket, \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send data out over a socket. \end{DoxyCompactList}\item 
+static int \hyperlink{classSocket_a123f1a45f0aa67dbf5d85a2280dc2852}{Close} (\hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket} socket)
+\begin{DoxyCompactList}\small\item\em Close a socket descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the T\+C\+P sockets. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSocket_a1c4718d5b4b33f92559ba413ad119c03}{\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\subsubsection[{Socket}]{\setlength{\rightskip}{0pt plus 5cm}Socket\+::\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a1c4718d5b4b33f92559ba413ad119c03}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port for bind. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSocket_a1a8d2862dd66d6345e72705d30f36406}{\index{Socket@{Socket}!Accept@{Accept}}
+\index{Accept@{Accept}!Socket@{Socket}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+socket} Socket\+::\+Accept (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a1a8d2862dd66d6345e72705d30f36406}
+
+
+Accept an incoming connection on a listening socket. 
+
+\begin{DoxyReturn}{Returns}
+Returns the newly connected socket descriptor, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a4fcdcae06c85a6a4be83cee0f9c34735}{\index{Socket@{Socket}!Bind@{Bind}}
+\index{Bind@{Bind}!Socket@{Socket}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a4fcdcae06c85a6a4be83cee0f9c34735}
+
+
+Associate a socket with Local I\+P address and a defined port number. 
+
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a9a9ba7cf3d9efe0a8c502d8d589d7f48}{\index{Socket@{Socket}!Bind@{Bind}}
+\index{Bind@{Bind}!Socket@{Socket}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Bind (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a9a9ba7cf3d9efe0a8c502d8d589d7f48}
+
+
+Associate a socket with Local I\+P address and a port number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a43c2f57797c9e37de056f8e0dab2c1f1}{\index{Socket@{Socket}!Bind@{Bind}}
+\index{Bind@{Bind}!Socket@{Socket}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Bind (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a43c2f57797c9e37de056f8e0dab2c1f1}
+
+
+Associate a socket with an I\+P address and a port number (N\+O\+T I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D Y\+E\+T). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & I\+P address. \\
+\hline
+{\em port} & Port number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_af54cb0772fa8cbce304c26cab4a63ad7}{\index{Socket@{Socket}!Close@{Close}}
+\index{Close@{Close}!Socket@{Socket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_af54cb0772fa8cbce304c26cab4a63ad7}
+
+
+Close the main and remote socket descriptor. 
+
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a123f1a45f0aa67dbf5d85a2280dc2852}{\index{Socket@{Socket}!Close@{Close}}
+\index{Close@{Close}!Socket@{Socket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}static int Socket\+::\+Close (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+socket}}]{socket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classSocket_a123f1a45f0aa67dbf5d85a2280dc2852}
+
+
+Close a socket descriptor. 
+
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a97248bd978b2212d0a78577d1b264cd3}{\index{Socket@{Socket}!Close\+Client@{Close\+Client}}
+\index{Close\+Client@{Close\+Client}!Socket@{Socket}}
+\subsubsection[{Close\+Client}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Close\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a97248bd978b2212d0a78577d1b264cd3}
+
+
+Close the remote socket descriptor. 
+
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_af6d09bbd69b9978f90c2d21be7c04820}{\index{Socket@{Socket}!Close\+Server@{Close\+Server}}
+\index{Close\+Server@{Close\+Server}!Socket@{Socket}}
+\subsubsection[{Close\+Server}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Close\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_af6d09bbd69b9978f90c2d21be7c04820}
+
+
+Close the main socket descriptor. 
+
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_af29e2918a65dc095a4d29f3f737d1c65}{\index{Socket@{Socket}!Connect@{Connect}}
+\index{Connect@{Connect}!Socket@{Socket}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Connect (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_af29e2918a65dc095a4d29f3f737d1c65}
+
+
+Connect a socket to a server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Remote I\+P address. \\
+\hline
+{\em port} & Remote Port number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_ab1b21cc98297c4b22638131805559185}{\index{Socket@{Socket}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Socket@{Socket}}
+\subsubsection[{get\+Port}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::get\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_ab1b21cc98297c4b22638131805559185}
+
+
+Get main socket port. 
+
+\begin{DoxyReturn}{Returns}
+Return port number of socket. 
+\end{DoxyReturn}
+\hypertarget{classSocket_a46dab09a0a8bc833b335b4ffbe251532}{\index{Socket@{Socket}!get\+Timeout@{get\+Timeout}}
+\index{get\+Timeout@{get\+Timeout}!Socket@{Socket}}
+\subsubsection[{get\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::get\+Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a46dab09a0a8bc833b335b4ffbe251532}
+
+
+Get timeout value. 
+
+\begin{DoxyReturn}{Returns}
+Return configured timeout value. 
+\end{DoxyReturn}
+\hypertarget{classSocket_af4463bb00360df09c545e45f38f555be}{\index{Socket@{Socket}!is\+Bound@{is\+Bound}}
+\index{is\+Bound@{is\+Bound}!Socket@{Socket}}
+\subsubsection[{is\+Bound}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+::is\+Bound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_af4463bb00360df09c545e45f38f555be}
+
+
+Check if socket is bound. 
+
+\begin{DoxyReturn}{Returns}
+Return true if socket is bound and false if not. 
+\end{DoxyReturn}
+\hypertarget{classSocket_a7e54aa5a8807a44096258b41fd27ecf3}{\index{Socket@{Socket}!is\+Closed@{is\+Closed}}
+\index{is\+Closed@{is\+Closed}!Socket@{Socket}}
+\subsubsection[{is\+Closed}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+::is\+Closed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a7e54aa5a8807a44096258b41fd27ecf3}
+
+
+Check if socket is closed. 
+
+\begin{DoxyReturn}{Returns}
+Return true if socket is closed and false if not. 
+\end{DoxyReturn}
+\hypertarget{classSocket_a60c76a4c1e26192218d598b63cbb97b9}{\index{Socket@{Socket}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!Socket@{Socket}}
+\subsubsection[{is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+::is\+Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a60c76a4c1e26192218d598b63cbb97b9}
+
+
+Check if socket is connected. 
+
+\begin{DoxyReturn}{Returns}
+Return true if socket is connected and false if not. 
+\end{DoxyReturn}
+\hypertarget{classSocket_a43012c8a63f3dce04b3e8620e9057a0b}{\index{Socket@{Socket}!is\+Listening@{is\+Listening}}
+\index{is\+Listening@{is\+Listening}!Socket@{Socket}}
+\subsubsection[{is\+Listening}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+::is\+Listening (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a43012c8a63f3dce04b3e8620e9057a0b}
+
+
+Check if socket is listening. 
+
+\begin{DoxyReturn}{Returns}
+Return true if socket is listening and false if not. 
+\end{DoxyReturn}
+\hypertarget{classSocket_a41051323db81b63a66ac66321962edca}{\index{Socket@{Socket}!Listen@{Listen}}
+\index{Listen@{Listen}!Socket@{Socket}}
+\subsubsection[{Listen}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Listen (
+\begin{DoxyParamCaption}
+\item[{int}]{backlog}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a41051323db81b63a66ac66321962edca}
+
+
+Tell a socket to listen for incoming connections. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em backlog} & Length of pending connections queue.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns zero on success, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_ac2c3da9186d42f261286e75161a7a3e9}{\index{Socket@{Socket}!Read@{Read}}
+\index{Read@{Read}!Socket@{Socket}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Read (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_ac2c3da9186d42f261286e75161a7a3e9}
+
+
+Read data on a socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Storage buffer pointer. \\
+\hline
+{\em size} & Storage buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually readed, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a880473a820b824bae9cf1f718a2e0ba3}{\index{Socket@{Socket}!read\+From@{read\+From}}
+\index{read\+From@{read\+From}!Socket@{Socket}}
+\subsubsection[{read\+From}]{\setlength{\rightskip}{0pt plus 5cm}static int Socket\+::read\+From (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+socket}}]{socket, }
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classSocket_a880473a820b824bae9cf1f718a2e0ba3}
+
+
+Receive data on a socket (Timeout is supported). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Local and connected socket descriptor. \\
+\hline
+{\em buffer} & Storage buffer pointer. \\
+\hline
+{\em size} & Storage buffer size. \\
+\hline
+{\em timeout} & Timeout value in seconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually received, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a63d6fc0dbd69e0752fd4c484028c64da}{\index{Socket@{Socket}!read\+From@{read\+From}}
+\index{read\+From@{read\+From}!Socket@{Socket}}
+\subsubsection[{read\+From}]{\setlength{\rightskip}{0pt plus 5cm}static int Socket\+::read\+From (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+socket}}]{socket, }
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classSocket_a63d6fc0dbd69e0752fd4c484028c64da}
+
+
+Read data on a socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Local and connected socket descriptor. \\
+\hline
+{\em buffer} & Storage buffer pointer. \\
+\hline
+{\em size} & Storage buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually readed, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a96ca161ecfaa38d2384141f131a0e41a}{\index{Socket@{Socket}!Receive@{Receive}}
+\index{Receive@{Receive}!Socket@{Socket}}
+\subsubsection[{Receive}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Receive (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a96ca161ecfaa38d2384141f131a0e41a}
+
+
+Receive data on a socket (Timeout is supported). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Storage buffer pointer. \\
+\hline
+{\em size} & Storage buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually received, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_ad9e6717ab6d79f3805d05f839ee4b902}{\index{Socket@{Socket}!Reply@{Reply}}
+\index{Reply@{Reply}!Socket@{Socket}}
+\subsubsection[{Reply}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Reply (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_ad9e6717ab6d79f3805d05f839ee4b902}
+
+
+Send data out over a remote connected socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Data buffer pointer. \\
+\hline
+{\em size} & Data buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually sent, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a9fbcd665edfd9cdaae25aeb6fcb5a2eb}{\index{Socket@{Socket}!Send@{Send}}
+\index{Send@{Send}!Socket@{Socket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Send (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a9fbcd665edfd9cdaae25aeb6fcb5a2eb}
+
+
+Send data out over a socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Data buffer pointer. \\
+\hline
+{\em size} & Data buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually sent, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_ab569a0288b1e56f962b1b9ea1cde89eb}{\index{Socket@{Socket}!send\+To@{send\+To}}
+\index{send\+To@{send\+To}!Socket@{Socket}}
+\subsubsection[{send\+To}]{\setlength{\rightskip}{0pt plus 5cm}static int Socket\+::send\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+socket}}]{socket, }
+\item[{{\bf t\+\_\+byte} $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classSocket_ab569a0288b1e56f962b1b9ea1cde89eb}
+
+
+Send data out over a socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Remote and connected socket descriptor. \\
+\hline
+{\em buffer} & Data buffer pointer. \\
+\hline
+{\em size} & Data buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes actually sent, or -\/1 on error (and errno will be set accordingly). 
+\end{DoxyReturn}
+\hypertarget{classSocket_a3d4c5d2c8722949bbd72a9d453edc94f}{\index{Socket@{Socket}!set\+Port@{set\+Port}}
+\index{set\+Port@{set\+Port}!Socket@{Socket}}
+\subsubsection[{set\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+::set\+Port (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a3d4c5d2c8722949bbd72a9d453edc94f}
+
+
+Set main socket port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSocket_af77803439a08c530d56c6e47392db835}{\index{Socket@{Socket}!set\+Timeout@{set\+Timeout}}
+\index{set\+Timeout@{set\+Timeout}!Socket@{Socket}}
+\subsubsection[{set\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+::set\+Timeout (
+\begin{DoxyParamCaption}
+\item[{int}]{sec}
+\end{DoxyParamCaption}
+)}}\label{classSocket_af77803439a08c530d56c6e47392db835}
+
+
+Set timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & Timeout value in seconds. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{socket_8h}{socket.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,232 @@
+\hypertarget{classHttp}{\section{Http Class Reference}
+\label{classHttp}\index{Http@{Http}}
+}
+
+
+This class implements the essentials operations for H\+T\+T\+P protocol.  
+
+
+
+
+{\ttfamily \#include $<$http.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classHttp_a7ca10575f9881c6af464adf4ce3d5f39}{Status} \{ \hyperlink{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a66a544337cd357d43dd74e2a81e26cd9}{O\+K} = 200, 
+\hyperlink{classHttp_a7ca10575f9881c6af464adf4ce3d5f39ac8726afd2f8bffcfa97753f0787ed4ff}{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T} = 206, 
+\hyperlink{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a970bfd4557dc7b210f39878dd9fadf27}{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D} = 304, 
+\hyperlink{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a2e8e8d90f1c318947b4b3b2994f297ca}{N\+O\+T\+\_\+\+F\+O\+U\+N\+D} = 404
+ \}
+\begin{DoxyCompactList}\small\item\em Constants of the supported responses status. \end{DoxyCompactList}\item 
+enum \hyperlink{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9}{Buffer\+Size} \{ \hyperlink{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a2682c6cd33fbef3e70c17289a4f14961}{D\+E\+F\+A\+U\+L\+T} = 1024, 
+\hyperlink{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a54f5ac838c8498e620adea2b484e3ef6}{M\+A\+X} = 1024000
+ \}
+\begin{DoxyCompactList}\small\item\em Constants of the buffer sizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classHttp_ace29775b1112f579a654e9ca29555994}{\hyperlink{classHttp_ace29775b1112f579a654e9ca29555994}{Http} ()}\label{classHttp_ace29775b1112f579a654e9ca29555994}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classHttp_a065b6d9ce8c8286398d2391e4940e4c3}{virtual \hyperlink{classHttp_a065b6d9ce8c8286398d2391e4940e4c3}{$\sim$\+Http} ()}\label{classHttp_a065b6d9ce8c8286398d2391e4940e4c3}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHttp_a362b9e0243157da63b2b5da257f3fc7e}{get\+Reqsted\+File} ()
+\begin{DoxyCompactList}\small\item\em Get the file requested by the client. \end{DoxyCompactList}\item 
+void \hyperlink{classHttp_ac5b12590b1659308b98893bf9df90e82}{set\+Server\+Name} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the server name. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classHttp_a904c99cee10ce63a4430ea23589dbeef}{get\+Binary\+Size} ()
+\begin{DoxyCompactList}\small\item\em Get the generated binary packet size. \end{DoxyCompactList}\item 
+\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$ \hyperlink{classHttp_a45ee4558263fe5b0cbd8a7f52465b4e2}{get\+Binary\+Packet} ()
+\begin{DoxyCompactList}\small\item\em Get the generated binary packet pointer. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHttp_abcbc6d6cd87c9386c50926eb6bd2ffdc}{get\+Header} ()
+\begin{DoxyCompactList}\small\item\em Get the generated header. \end{DoxyCompactList}\item 
+void \hyperlink{classHttp_af0c346ead006dfaaeef561326e8d5efe}{process\+Request} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$header)
+\begin{DoxyCompactList}\small\item\em Processes a request header and collects the data contained therein. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHttp_a31f92b624ebfd1d047569738b171cc0d}{create\+Response\+Header} (size\+\_\+t filelen, int status\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Create a response header. \end{DoxyCompactList}\item 
+\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$ \hyperlink{classHttp_ac577bab53227eeacfb83f12030df069a}{create\+Binary\+Packet} (\hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$file\+\_\+bin, size\+\_\+t file\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Create a binary package with the generated header and the binary of the file to be sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the essentials operations for H\+T\+T\+P protocol. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9}{\index{Http@{Http}!Buffer\+Size@{Buffer\+Size}}
+\index{Buffer\+Size@{Buffer\+Size}!Http@{Http}}
+\subsubsection[{Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Http\+::\+Buffer\+Size}}}\label{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9}
+
+
+Constants of the buffer sizes. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+E\+F\+A\+U\+L\+T@{D\+E\+F\+A\+U\+L\+T}!Http@{Http}}\index{Http@{Http}!D\+E\+F\+A\+U\+L\+T@{D\+E\+F\+A\+U\+L\+T}}\item[{\em 
+\hypertarget{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a2682c6cd33fbef3e70c17289a4f14961}{D\+E\+F\+A\+U\+L\+T}\label{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a2682c6cd33fbef3e70c17289a4f14961}
+}]Default value of H\+T\+T\+P buffer size 1 K\+B \index{M\+A\+X@{M\+A\+X}!Http@{Http}}\index{Http@{Http}!M\+A\+X@{M\+A\+X}}\item[{\em 
+\hypertarget{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a54f5ac838c8498e620adea2b484e3ef6}{M\+A\+X}\label{classHttp_aa5fa11782ddf38ff8604c6e0f7c7b5d9a54f5ac838c8498e620adea2b484e3ef6}
+}]Max value of H\+T\+T\+P buffer size 1 M\+B \end{description}
+\end{Desc}
+\hypertarget{classHttp_a7ca10575f9881c6af464adf4ce3d5f39}{\index{Http@{Http}!Status@{Status}}
+\index{Status@{Status}!Http@{Http}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Http\+::\+Status}}}\label{classHttp_a7ca10575f9881c6af464adf4ce3d5f39}
+
+
+Constants of the supported responses status. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{O\+K@{O\+K}!Http@{Http}}\index{Http@{Http}!O\+K@{O\+K}}\item[{\em 
+\hypertarget{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a66a544337cd357d43dd74e2a81e26cd9}{O\+K}\label{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a66a544337cd357d43dd74e2a81e26cd9}
+}]Status code 200 O\+K \index{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T@{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T}!Http@{Http}}\index{Http@{Http}!P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T@{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T}}\item[{\em 
+\hypertarget{classHttp_a7ca10575f9881c6af464adf4ce3d5f39ac8726afd2f8bffcfa97753f0787ed4ff}{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+N\+T}\label{classHttp_a7ca10575f9881c6af464adf4ce3d5f39ac8726afd2f8bffcfa97753f0787ed4ff}
+}]Status code 206 Partial Content \index{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D@{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D}!Http@{Http}}\index{Http@{Http}!N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D@{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D}}\item[{\em 
+\hypertarget{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a970bfd4557dc7b210f39878dd9fadf27}{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+E\+D}\label{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a970bfd4557dc7b210f39878dd9fadf27}
+}]Status code 304 Not Modified \index{N\+O\+T\+\_\+\+F\+O\+U\+N\+D@{N\+O\+T\+\_\+\+F\+O\+U\+N\+D}!Http@{Http}}\index{Http@{Http}!N\+O\+T\+\_\+\+F\+O\+U\+N\+D@{N\+O\+T\+\_\+\+F\+O\+U\+N\+D}}\item[{\em 
+\hypertarget{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a2e8e8d90f1c318947b4b3b2994f297ca}{N\+O\+T\+\_\+\+F\+O\+U\+N\+D}\label{classHttp_a7ca10575f9881c6af464adf4ce3d5f39a2e8e8d90f1c318947b4b3b2994f297ca}
+}]Status code 404 Not Found \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHttp_ac577bab53227eeacfb83f12030df069a}{\index{Http@{Http}!create\+Binary\+Packet@{create\+Binary\+Packet}}
+\index{create\+Binary\+Packet@{create\+Binary\+Packet}!Http@{Http}}
+\subsubsection[{create\+Binary\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+byte}$\ast$ Http\+::create\+Binary\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{file\+\_\+bin, }
+\item[{size\+\_\+t}]{file\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{classHttp_ac577bab53227eeacfb83f12030df069a}
+
+
+Create a binary package with the generated header and the binary of the file to be sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+bin} & Pointer to the binary file buffer. \\
+\hline
+{\em file\+\_\+size} & Size of file buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return a pointer of the binary packet containig the generated header and the binary data of the file. 
+\end{DoxyReturn}
+\hypertarget{classHttp_a31f92b624ebfd1d047569738b171cc0d}{\index{Http@{Http}!create\+Response\+Header@{create\+Response\+Header}}
+\index{create\+Response\+Header@{create\+Response\+Header}!Http@{Http}}
+\subsubsection[{create\+Response\+Header}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Http\+::create\+Response\+Header (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{filelen, }
+\item[{int}]{status\+\_\+code}
+\end{DoxyParamCaption}
+)}}\label{classHttp_a31f92b624ebfd1d047569738b171cc0d}
+
+
+Create a response header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filelen} & Size of file to be send with the header. \\
+\hline
+{\em status\+\_\+code} & H\+T\+T\+P status code value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return a string containing the generated header. 
+\end{DoxyReturn}
+\hypertarget{classHttp_a45ee4558263fe5b0cbd8a7f52465b4e2}{\index{Http@{Http}!get\+Binary\+Packet@{get\+Binary\+Packet}}
+\index{get\+Binary\+Packet@{get\+Binary\+Packet}!Http@{Http}}
+\subsubsection[{get\+Binary\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+byte}$\ast$ Http\+::get\+Binary\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHttp_a45ee4558263fe5b0cbd8a7f52465b4e2}
+
+
+Get the generated binary packet pointer. 
+
+\begin{DoxyReturn}{Returns}
+Return the binary packet pointer. 
+\end{DoxyReturn}
+\hypertarget{classHttp_a904c99cee10ce63a4430ea23589dbeef}{\index{Http@{Http}!get\+Binary\+Size@{get\+Binary\+Size}}
+\index{get\+Binary\+Size@{get\+Binary\+Size}!Http@{Http}}
+\subsubsection[{get\+Binary\+Size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Http\+::get\+Binary\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHttp_a904c99cee10ce63a4430ea23589dbeef}
+
+
+Get the generated binary packet size. 
+
+\begin{DoxyReturn}{Returns}
+Return the binary packet size. 
+\end{DoxyReturn}
+\hypertarget{classHttp_abcbc6d6cd87c9386c50926eb6bd2ffdc}{\index{Http@{Http}!get\+Header@{get\+Header}}
+\index{get\+Header@{get\+Header}!Http@{Http}}
+\subsubsection[{get\+Header}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Http\+::get\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHttp_abcbc6d6cd87c9386c50926eb6bd2ffdc}
+
+
+Get the generated header. 
+
+\begin{DoxyReturn}{Returns}
+Return a string of the generated header. 
+\end{DoxyReturn}
+\hypertarget{classHttp_a362b9e0243157da63b2b5da257f3fc7e}{\index{Http@{Http}!get\+Reqsted\+File@{get\+Reqsted\+File}}
+\index{get\+Reqsted\+File@{get\+Reqsted\+File}!Http@{Http}}
+\subsubsection[{get\+Reqsted\+File}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Http\+::get\+Reqsted\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHttp_a362b9e0243157da63b2b5da257f3fc7e}
+
+
+Get the file requested by the client. 
+
+\begin{DoxyReturn}{Returns}
+Return the requested file. 
+\end{DoxyReturn}
+\hypertarget{classHttp_af0c346ead006dfaaeef561326e8d5efe}{\index{Http@{Http}!process\+Request@{process\+Request}}
+\index{process\+Request@{process\+Request}!Http@{Http}}
+\subsubsection[{process\+Request}]{\setlength{\rightskip}{0pt plus 5cm}void Http\+::process\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+byte} $\ast$}]{header}
+\end{DoxyParamCaption}
+)}}\label{classHttp_af0c346ead006dfaaeef561326e8d5efe}
+
+
+Processes a request header and collects the data contained therein. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & Byte pointer of binary packet from a H\+T\+T\+P/\+T\+C\+P connection. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHttp_ac5b12590b1659308b98893bf9df90e82}{\index{Http@{Http}!set\+Server\+Name@{set\+Server\+Name}}
+\index{set\+Server\+Name@{set\+Server\+Name}!Http@{Http}}
+\subsubsection[{set\+Server\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Http\+::set\+Server\+Name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+)}}\label{classHttp_ac5b12590b1659308b98893bf9df90e82}
+
+
+Set the server name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & New name of server. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{http_8h}{http.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{util_8h}{\section{include/util.h File Reference}
+\label{util_8h}\index{include/util.\+h@{include/util.\+h}}
+}
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+Include dependency graph for util.\+h\+:
+This graph shows which files directly or indirectly include this file\+:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\+H\+E\+C\+K\+\_\+\+E\+R\+R}(cond, msg, ret)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte}
+\item 
+typedef int \hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Jorismar Barbosa Meira \href{mailto:jorismar.barbosa@cc.ci.ufpb.br}{\tt jorismar.\+barbosa@cc.\+ci.\+ufpb.\+br} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{util_8h_a6fd2a832a28248486497f60b94693266}{\index{util.\+h@{util.\+h}!C\+H\+E\+C\+K\+\_\+\+E\+R\+R@{C\+H\+E\+C\+K\+\_\+\+E\+R\+R}}
+\index{C\+H\+E\+C\+K\+\_\+\+E\+R\+R@{C\+H\+E\+C\+K\+\_\+\+E\+R\+R}!util.\+h@{util.\+h}}
+\subsubsection[{C\+H\+E\+C\+K\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+E\+R\+R(
+\begin{DoxyParamCaption}
+\item[{}]{cond, }
+\item[{}]{msg, }
+\item[{}]{ret}
+\end{DoxyParamCaption}
+)}}\label{util_8h_a6fd2a832a28248486497f60b94693266}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                   \(\backslash\)
+    if(cond) \{                                          \(\backslash\)
+        std::string file(\_\_FILE\_\_);                     \(\backslash\)
+        size\_t pos = file.find\_last\_of(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)/"});          \(\backslash\)
+        std::cout << \textcolor{stringliteral}{"[ERROR] "} << msg << std::endl;    \(\backslash\)
+        return ret;                                     \(\backslash\)
+    \}                                                   \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{util_8h_af1d862c52e0c84cc223f106956ac8543}{\index{util.\+h@{util.\+h}!t\+\_\+byte@{t\+\_\+byte}}
+\index{t\+\_\+byte@{t\+\_\+byte}!util.\+h@{util.\+h}}
+\subsubsection[{t\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf t\+\_\+byte}}}\label{util_8h_af1d862c52e0c84cc223f106956ac8543}
+Define char in a new type for manipulating bytes. \hypertarget{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{\index{util.\+h@{util.\+h}!t\+\_\+socket@{t\+\_\+socket}}
+\index{t\+\_\+socket@{t\+\_\+socket}!util.\+h@{util.\+h}}
+\subsubsection[{t\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf t\+\_\+socket}}}\label{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}
+Define int in a new type for socket opearations. 
