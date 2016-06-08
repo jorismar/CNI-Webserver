@@ -19,6 +19,13 @@ typedef char \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte}
 \item 
 typedef int \hyperlink{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}{t\+\_\+socket}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{util_8h_af0251630f7674cb342a6dd51b981b090}{get\+Date} (std\+::string format)
+\begin{DoxyCompactList}\small\item\em Get the current date and time in the specific format. \end{DoxyCompactList}\item 
+int \hyperlink{util_8h_a018875b26476b400bf24a2a694941f7f}{read\+File} (std\+::string path, \hyperlink{util_8h_af1d862c52e0c84cc223f106956ac8543}{t\+\_\+byte} $\ast$$\ast$buffer)
+\begin{DoxyCompactList}\small\item\em This method read a file on the computer storage disc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -58,3 +65,46 @@ Define char in a new type for manipulating bytes. \hypertarget{util_8h_a3a5c9c6e
 \index{t\+\_\+socket@{t\+\_\+socket}!util.\+h@{util.\+h}}
 \subsubsection[{t\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf t\+\_\+socket}}}\label{util_8h_a3a5c9c6e94e7c0d53da206ce360ea0f2}
 Define int in a new type for socket opearations. 
+
+\subsection{Function Documentation}
+\hypertarget{util_8h_af0251630f7674cb342a6dd51b981b090}{\index{util.\+h@{util.\+h}!get\+Date@{get\+Date}}
+\index{get\+Date@{get\+Date}!util.\+h@{util.\+h}}
+\subsubsection[{get\+Date}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string get\+Date (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{format}
+\end{DoxyParamCaption}
+)}}\label{util_8h_af0251630f7674cb342a6dd51b981b090}
+
+
+Get the current date and time in the specific format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Format of date and time. (See the strftime function documentation from ctime lib for format symbols table).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return a string of the current date/time. 
+\end{DoxyReturn}
+\hypertarget{util_8h_a018875b26476b400bf24a2a694941f7f}{\index{util.\+h@{util.\+h}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!util.\+h@{util.\+h}}
+\subsubsection[{read\+File}]{\setlength{\rightskip}{0pt plus 5cm}int read\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path, }
+\item[{{\bf t\+\_\+byte} $\ast$$\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{util_8h_a018875b26476b400bf24a2a694941f7f}
+
+
+This method read a file on the computer storage disc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Requested file location. \\
+\hline
+{\em buffer} & Buffer to store the bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes readed. 
+\end{DoxyReturn}

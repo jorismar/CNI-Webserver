@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">util.h File Reference</div>  </div>
 </div><!--header-->
@@ -122,6 +123,15 @@ Typedefs</h2></td></tr>
 <tr class="separator:af1d862c52e0c84cc223f106956ac8543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a5c9c6e94e7c0d53da206ce360ea0f2"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a3a5c9c6e94e7c0d53da206ce360ea0f2">t_socket</a></td></tr>
 <tr class="separator:a3a5c9c6e94e7c0d53da206ce360ea0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af0251630f7674cb342a6dd51b981b090"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#af0251630f7674cb342a6dd51b981b090">getDate</a> (std::string format)</td></tr>
+<tr class="memdesc:af0251630f7674cb342a6dd51b981b090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current date and time in the specific format.  <a href="#af0251630f7674cb342a6dd51b981b090">More...</a><br /></td></tr>
+<tr class="separator:af0251630f7674cb342a6dd51b981b090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018875b26476b400bf24a2a694941f7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a018875b26476b400bf24a2a694941f7f">readFile</a> (std::string path, <a class="el" href="util_8h.html#af1d862c52e0c84cc223f106956ac8543">t_byte</a> **buffer)</td></tr>
+<tr class="memdesc:a018875b26476b400bf24a2a694941f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method read a file on the computer storage disc.  <a href="#a018875b26476b400bf24a2a694941f7f">More...</a><br /></td></tr>
+<tr class="separator:a018875b26476b400bf24a2a694941f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Jorismar Barbosa Meira <a href="#" onclick="location.href='mai'+'lto:'+'jor'+'is'+'mar'+'.b'+'arb'+'os'+'a@c'+'c.'+'ci.'+'uf'+'pb.'+'br'; return false;">joris<span style="display: none;">.nosp@m.</span>mar.<span style="display: none;">.nosp@m.</span>barbo<span style="display: none;">.nosp@m.</span>sa@c<span style="display: none;">.nosp@m.</span>c.ci.<span style="display: none;">.nosp@m.</span>ufpb<span style="display: none;">.nosp@m.</span>.br</a> </dd></dl>
@@ -193,10 +203,72 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="af0251630f7674cb342a6dd51b981b090"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getDate </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>format</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current date and time in the specific format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format of date and time. (See the strftime function documentation from ctime lib for format symbols table).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return a string of the current date/time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a018875b26476b400bf24a2a694941f7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int readFile </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#af1d862c52e0c84cc223f106956ac8543">t_byte</a> **&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method read a file on the computer storage disc. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Requested file location. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Buffer to store the bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of bytes readed. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 7 2016 23:13:03 for [Projeto Final] HTTP Server Multithread by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 8 2016 01:07:55 for [Projeto Final] HTTP Server Multithread by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

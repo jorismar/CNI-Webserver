@@ -161,13 +161,6 @@ std::string Http::createResponseHeader(size_t filelen, int status_code) {
 		connection 	= "keep-alive";
 	}
 	
-	// Status code = 304
-	else if(status_code == Http::Status::NOT_MODIFIED) {
-        status 		= "304 Not Modified";
-        connection 	= "keep-alive";
-        // implement time check
-	}
-	
 	// Status code = 404
 	else if(status_code == Http::Status::NOT_FOUND) {
 		status 				 = "404 Not Found";

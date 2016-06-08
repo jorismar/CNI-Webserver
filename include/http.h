@@ -55,7 +55,6 @@ class Http {
         enum Status {
             OK = 200,               /*!< Status code 200 OK */
             PARTIAL_CONTENT = 206,  /*!< Status code 206 Partial Content */
-            NOT_MODIFIED = 304,     /*!< Status code 304 Not Modified */
             NOT_FOUND = 404,        /*!< Status code 404 Not Found */
         };
 

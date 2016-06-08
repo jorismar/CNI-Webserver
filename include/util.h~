@@ -49,7 +49,7 @@ typedef int t_socket;
  *
  * \return  Return a string of the current date/time.
  */
-std::string getDate(std::string format);
+static std::string getDate(std::string format);
 
 /**
  * \brief   This method read a file on the computer storage disc.
@@ -59,6 +59,6 @@ std::string getDate(std::string format);
  *
  * \return  Returns the number of bytes readed.
  */
-int readFile(std::string path, t_byte ** buffer);
+static int readFile(std::string path, t_byte ** buffer);
 
 #endif
